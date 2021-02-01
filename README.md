@@ -1,16 +1,18 @@
 # Wechaty Puppet OpenAPI Specification (OAS)
 
-![OpenAPI Specification with gRPC](docs/images/restful-grpc.jpg)
+![OpenAPI Specification with gRPC](docs/images/grpc-rest-logo.png)
 
-> Image credit: [REST & gRPC – API Communication in Microservices](https://www.apiscene.io/lifecycle/rest-grpc-api-communication-in-microservices/)
+> Image credit: [Introducing gRPC HTTP API](http://james.newtonking.com/archive/2020/03/31/introducing-grpc-http-api)
+
+![OpenAPI Specification](docs/images/openapi.png)
 
 ## Motivation
 
-We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet) already, so we want a RESTful API as well, powered by [OpenAPI Specification](https://www.openapis.org/) (OAS), former [Swagger](https://swagger.io/).
+We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
 
 ## Resources
 
-- [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) ([talk video](https://youtu.be/Pq1paKC-fXk))
+- Talk video: [Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK](https://youtu.be/Pq1paKC-fXk)
 
 ## History
 
