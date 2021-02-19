@@ -14,6 +14,7 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 
 - Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK <https://youtu.be/Pq1paKC-fXk>
 - gRPC with REST and Open APIs <https://grpc.io/blog/coreos/>
+- Google Cloud - Transcoding HTTP/JSON to gRPC <https://cloud.google.com/endpoints/docs/grpc/transcoding>
 
 ## History
 
