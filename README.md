@@ -12,7 +12,8 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 
 ## Resources
 
-- Talk video: [Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK](https://youtu.be/Pq1paKC-fXk)
+- Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK <https://youtu.be/Pq1paKC-fXk>
+- gRPC with REST and Open APIs <https://grpc.io/blog/coreos/>
 
 ## History
 
