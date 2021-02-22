@@ -22,6 +22,7 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 - [REST Resource Naming Guide](https://restfulapi.net/resource-naming/)
 - [10+ Best Practices for Naming API Endpoints](https://nordicapis.com/10-best-practices-for-naming-api-endpoints/)
 - [PUT vs. POST in REST](https://stackoverflow.com/a/2590281/1123955)
+- [Google Cloud Common Design Patterns](https://cloud.google.com/apis/design/design_patterns)
 
 ## Tutorials
 
@@ -32,6 +33,7 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 ## Resources
 
 - [OpenAPI Specification v3.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md)
+- [gRPC with REST and Open APIs](https://grpc.io/blog/coreos/)
 
 ## History
 
