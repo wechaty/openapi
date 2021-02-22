@@ -106,3 +106,5 @@ dist
 generated/
 t/
 t.*
+
+package-lock.json

@@ -1,0 +1,55 @@
+{
+  "name": "wechaty-openapi",
+  "version": "0.0.1",
+  "description": "Wechaty Puppet RESTful API Service",
+  "main": "dist/src/mod.js",
+  "typings": "dist/src/mod.d.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "clean": "shx rm -fr dist/*",
+    "dist": "npm run clean && tsc",
+    "lint": "npm run lint:es && npm run lint:ts",
+    "lint:ts": "tsc --noEmit",
+    "pack": "npm pack",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "blue-tape -r ts-node/register \"src/**/*.test.ts\" \"tests/**/*.test.ts\"",
+    "test:pack": "bash -x scripts/npm-pack-testing.sh",
+    "lint:es": "eslint --ignore-pattern fixtures/ \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wechaty/openapi.git"
+  },
+  "keywords": [
+    "wechaty",
+    "openapi",
+    "wechaty-openapi",
+    "restful"
+  ],
+  "author": "Huan <zixia@zixia.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wechaty/openapi/issues"
+  },
+  "homepage": "https://github.com/wechaty/openapi#readme",
+  "devDependencies": {
+    "@chatie/eslint-config": "^0.12.3",
+    "@chatie/git-scripts": "^0.6.2",
+    "@chatie/semver": "^0.4.7",
+    "@chatie/tsconfig": "^0.14.1",
+    "shx": "^0.3.3",
+    "tstest": "^0.4.10"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "npx git-scripts-pre-push"
+    }
+  }
+}
