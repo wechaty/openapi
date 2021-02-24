@@ -12,6 +12,17 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 
 - [Upload file via auto-generated OpenAPI specification with gRPC backend #1](https://github.com/wechaty/openapi/issues/1)
 
+## Architecture
+
+[![gRPC Gateway](docs/images/grpc-gateway-architecture.svg)](https://grpc-ecosystem.github.io/grpc-gateway/)
+
+> Image credit: [grpc-gateway](https://grpc-ecosystem.github.io/grpc-gateway/)
+
+Thanks for the ecosystem of gRPC, we can generate OpenAPI Specification from our gRPC proto definitions automatica
+lly.
+
+We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve a HTTP RESTful API to gRPC proxy.
+
 ## gRPC Transcoding
 
 - [Google Cloud: Transcoding HTTP/JSON to gRPC](https://cloud.google.com/endpoints/docs/grpc/transcoding)
