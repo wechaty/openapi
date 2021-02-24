@@ -7,14 +7,18 @@
   "directories": {
     "doc": "docs"
   },
+  "bin": {
+    "wechaty-openapi-server": "dist/bin/wechaty-openapi-server.js"
+  },
   "scripts": {
     "clean": "shx rm -fr dist/*",
     "dist": "npm run clean && tsc",
+    "example": "ts-node examples/proxy.ts",
     "lint": "npm run lint:es && npm run lint:ts",
     "lint:ts": "tsc --noEmit",
     "pack": "npm pack",
     "test": "npm run lint && npm run test:unit",
-    "test:unit": "blue-tape -r ts-node/register \"src/**/*.test.ts\" \"tests/**/*.test.ts\"",
+    "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"tests/**/*.spec.ts\"",
     "test:pack": "bash -x scripts/npm-pack-testing.sh",
     "lint:es": "eslint --ignore-pattern fixtures/ \"src/**/*.ts\" \"tests/**/*.ts\""
   },
@@ -25,6 +29,7 @@
   "keywords": [
     "wechaty",
     "openapi",
+    "grpc",
     "wechaty-openapi",
     "restful"
   ],
@@ -39,10 +44,19 @@
     "@chatie/git-scripts": "^0.6.2",
     "@chatie/semver": "^0.4.7",
     "@chatie/tsconfig": "^0.14.1",
+    "@types/express": "^4.17.11",
+    "@types/yargs": "^16.0.0",
     "shx": "^0.3.3",
     "tstest": "^0.4.10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "brolog": "^1.12.4",
+    "express": "^4.17.1",
+    "grpc": "^1.24.5",
+    "grpc-dynamic-gateway": "^0.4.4",
+    "yargs": "^16.2.0"
+  },
   "publishConfig": {
     "access": "public",
     "tag": "next"

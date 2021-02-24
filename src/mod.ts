@@ -1,7 +1,7 @@
 export {
   VERSION,
-}               from './version'
+}                   from './version'
 
 export {
-  OpenApi,
-}               from './openapi'
+  WechatyOpenApi,
+}                   from './openapi'
