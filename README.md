@@ -8,10 +8,20 @@
 
 We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
 
+## Screenshot
+
+![Wechaty Puppet OpenAPI RESTful API Swagger UI](docs/images/wechaty-openapi-swagger-ui.png)
+
 ## Features
 
-1. A standalone server for testing
+1. A standalone server `wechaty-openapi-server`
 2. An express router for easily mounting to anywhere.
+
+## Install
+
+```sh
+npm install wechaty-openapi
+```
 
 ## Usage
 
@@ -45,28 +55,28 @@ lly.
 
 We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve a HTTP RESTful API to gRPC proxy.
 
-## gRPC Transcoding
+## Resources
+
+- [OpenAPI Specification v3.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md)
+- [gRPC with REST and Open APIs](https://grpc.io/blog/coreos/)
+
+### gRPC Transcoding
 
 - [Google Cloud: Transcoding HTTP/JSON to gRPC](https://cloud.google.com/endpoints/docs/grpc/transcoding)
 - [Envoy: gRPC-JSON transcoder](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/grpc_json_transcoder_filter)
 
-## RESTful API Naming Convention
+### RESTful API Naming Convention
 
 - [REST Resource Naming Guide](https://restfulapi.net/resource-naming/)
 - [10+ Best Practices for Naming API Endpoints](https://nordicapis.com/10-best-practices-for-naming-api-endpoints/)
 - [PUT vs. POST in REST](https://stackoverflow.com/a/2590281/1123955)
 - [Google Cloud Common Design Patterns](https://cloud.google.com/apis/design/design_patterns)
 
-## Tutorials
+### Tutorials
 
 - Talk video: [Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK](https://youtu.be/Pq1paKC-fXk)
 - [Take a REST with HTTP/2, Protobufs, and Swagger](https://coreos.com/blog/grpc-protobufs-swagger.html)
 - [All the boilerplate you need to get started with writing grpc-gateway powered REST services in Go](https://github.com/johanbrandhorst/grpc-gateway-boilerplate)
-
-## Resources
-
-- [OpenAPI Specification v3.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md)
-- [gRPC with REST and Open APIs](https://grpc.io/blog/coreos/)
 
 ## History
 
@@ -74,7 +84,7 @@ We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https:/
 
 ### v0.0.1 (Feb 22, 2021)
 
-TODO
+Init version for starting developing
 
 ## Author
 
