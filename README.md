@@ -12,6 +12,8 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 
 ![Wechaty Puppet OpenAPI RESTful API Swagger UI](docs/images/wechaty-openapi-swagger-ui.png)
 
+> [View Wechaty OpenAPI Specification on SwaggerHub](https://app.swaggerhub.com/apis/zixia/WechatyPuppet/)
+
 ## Features
 
 1. A standalone server `wechaty-openapi-server`
