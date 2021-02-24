@@ -4,28 +4,28 @@
 
 > Image credit: [Introducing gRPC HTTP API](http://james.newtonking.com/archive/2020/03/31/introducing-grpc-http-api)
 
-## Motivation
+## MOTIVATION
 
 We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
 
-## Screenshot
+## SCREENSHOT
 
 ![Wechaty Puppet OpenAPI RESTful API Swagger UI](docs/images/wechaty-openapi-swagger-ui.png)
 
 > [View Wechaty OpenAPI Specification on SwaggerHub](https://app.swaggerhub.com/apis/zixia/WechatyPuppet/)
 
-## Features
+## FEATURES
 
 1. A **Standalone HTTP Server** `wechaty-openapi-server`
 2. An **Express Router** for easily mounting to any existing **Experss HTTP Server**.
 
-## Install
+## INSTALL
 
 ```sh
 npm install wechaty-openapi
 ```
 
-## Usage
+## USAGE
 
 ### 1. Standalone Server
 
@@ -42,11 +42,11 @@ Then visit <http://localhost:8080/api>
 
 tbw
 
-## Known Issues
+## KNOWN ISSUES
 
 - [Upload file via auto-generated OpenAPI specification with gRPC backend #1](https://github.com/wechaty/openapi/issues/1)
 
-## Architecture
+## ARCHITECTURE
 
 [![gRPC Gateway](docs/images/grpc-gateway-architecture.svg)](https://grpc-ecosystem.github.io/grpc-gateway/)
 
@@ -57,7 +57,7 @@ lly.
 
 We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve a HTTP RESTful API to gRPC proxy.
 
-## Resources
+## RESOURCES
 
 - [OpenAPI Specification v3.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md)
 - [gRPC with REST and Open APIs](https://grpc.io/blog/coreos/)
@@ -80,7 +80,7 @@ We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https:/
 - [Take a REST with HTTP/2, Protobufs, and Swagger](https://coreos.com/blog/grpc-protobufs-swagger.html)
 - [All the boilerplate you need to get started with writing grpc-gateway powered REST services in Go](https://github.com/johanbrandhorst/grpc-gateway-boilerplate)
 
-## History
+## HISTORY
 
 ### master
 
@@ -88,14 +88,14 @@ We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https:/
 
 Init version for starting developing
 
-## Author
+## AUTHOR
 
 [Huan LI](https://github.com/huan) ([李卓桓](http://linkedin.com/in/zixia)),
 Microsoft Regional Director, \<zixia@zixia.net\>
 
 [![Profile of Huan LI (李卓桓) on StackOverflow](https://stackexchange.com/users/flair/265499.png)](https://stackexchange.com/users/265499)
 
-## Copyright & License
+## COPYRIGHT & LICENSE
 
 - Code & Docs © 2021-now Huan LI \<zixia@zixia.net\>
 - Code released under the Apache-2.0 License
