@@ -1,6 +1,6 @@
 {
   "name": "wechaty-openapi",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Wechaty Puppet RESTful API Service",
   "main": "dist/src/mod.js",
   "typings": "dist/src/mod.d.ts",
