@@ -8,6 +8,28 @@
 
 We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
 
+## Features
+
+1. A standalone server for testing
+2. An express router for easily mounting to anywhere.
+
+## Usage
+
+### 1. Standalone Server
+
+```sh
+export WECHATY_PUPPET_SERVICE_TOKEN=__YOUR_TOKEN__
+wechaty-openapi-server \
+  --mountpoint /api
+  --port 8080
+```
+
+Then visit <http://localhost:8080/api>
+
+### 2. Express Router
+
+tbw
+
 ## Known Issues
 
 - [Upload file via auto-generated OpenAPI specification with gRPC backend #1](https://github.com/wechaty/openapi/issues/1)
