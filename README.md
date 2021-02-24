@@ -16,8 +16,8 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 
 ## Features
 
-1. A standalone server `wechaty-openapi-server`
-2. An express router for easily mounting to anywhere.
+1. A **Standalone HTTP Server** `wechaty-openapi-server`
+2. An **Express Router** for easily mounting to any existing **Experss HTTP Server**.
 
 ## Install
 
