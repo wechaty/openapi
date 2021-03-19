@@ -73,6 +73,7 @@ We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https:/
 - [10+ Best Practices for Naming API Endpoints](https://nordicapis.com/10-best-practices-for-naming-api-endpoints/)
 - [PUT vs. POST in REST](https://stackoverflow.com/a/2590281/1123955)
 - [Google Cloud Common Design Patterns](https://cloud.google.com/apis/design/design_patterns)
+- [REST based Services/Architecture vs. RESTFUL Services/Architecture](https://stackoverflow.com/a/24584128/1123955)
 
 ### Tutorials
 
