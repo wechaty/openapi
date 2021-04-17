@@ -4,6 +4,14 @@
 
 > Image credit: [Introducing gRPC HTTP API](http://james.newtonking.com/archive/2020/03/31/introducing-grpc-http-api)
 
+## UNDER CONSTRUCTION
+
+This repo is working in process.
+We hope we can finish an alpha version in April,
+and be ready to Beta on May!
+
+Issues & PRs are welcome, thank you very much for your attention.
+
 ## MOTIVATION
 
 We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
@@ -91,8 +99,10 @@ Init version for starting developing
 
 ## AUTHOR
 
-[Huan LI](https://github.com/huan) ([李卓桓](http://linkedin.com/in/zixia)),
-Microsoft Regional Director, \<zixia@zixia.net\>
+[Huan LI](https://github.com/huan)
+([李卓桓](http://linkedin.com/in/zixia)),
+[Microsoft Regional Director](https://rd.microsoft.com/en-us/huan-li),
+\<zixia@zixia.net\>
 
 [![Profile of Huan LI (李卓桓) on StackOverflow](https://stackexchange.com/users/flair/265499.png)](https://stackexchange.com/users/265499)
 
