@@ -55,7 +55,7 @@
     "express": "^4.17.1",
     "grpc": "^1.24.5",
     "grpc-dynamic-gateway": "^0.4.4",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.0"
   },
   "publishConfig": {
     "access": "public",
