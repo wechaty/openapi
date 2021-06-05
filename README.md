@@ -6,9 +6,9 @@
 
 ## UNDER CONSTRUCTION
 
-This repo is working in process.
+This repo is working in the process.
 We hope we can finish an alpha version in April,
-and be ready to Beta on May!
+and be ready to Beta in May!
 
 Issues & PRs are welcome, thank you very much for your attention.
 
@@ -25,7 +25,7 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 ## FEATURES
 
 1. A **Standalone HTTP Server** `wechaty-openapi-server`
-2. An **Express Router** for easily mounting to any existing **Experss HTTP Server**.
+2. An **Express Router** for easy mounting to any existing **Express HTTP Server**.
 
 ## INSTALL
 
@@ -40,8 +40,8 @@ npm install wechaty-openapi
 ```sh
 export WECHATY_PUPPET_SERVICE_TOKEN=__YOUR_TOKEN__
 wechaty-openapi-server \
-  --mountpoint /api
-  --port 8080
+ --mountpoint /api
+ --port 8080
 ```
 
 Then visit <http://localhost:8080/api>
@@ -60,10 +60,9 @@ tbw
 
 > Image credit: [grpc-gateway](https://grpc-ecosystem.github.io/grpc-gateway/)
 
-Thanks for the ecosystem of gRPC, we can generate OpenAPI Specification from our gRPC proto definitions automatica
-lly.
+Thanks to the ecosystem of gRPC, we can generate OpenAPI Specification from our gRPC proto definitions automatically.
 
-We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve a HTTP RESTful API to gRPC proxy.
+We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve an HTTP RESTful API to gRPC proxy.
 
 ## RESOURCES
 
@@ -88,14 +87,6 @@ We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https:/
 - Talk video: [Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK](https://youtu.be/Pq1paKC-fXk)
 - [Take a REST with HTTP/2, Protobufs, and Swagger](https://coreos.com/blog/grpc-protobufs-swagger.html)
 - [All the boilerplate you need to get started with writing grpc-gateway powered REST services in Go](https://github.com/johanbrandhorst/grpc-gateway-boilerplate)
-
-## HISTORY
-
-### master
-
-### v0.0.1 (Feb 22, 2021)
-
-Init version for starting developing
 
 ## AUTHOR
 
