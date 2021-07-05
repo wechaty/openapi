@@ -9,6 +9,15 @@ Happy contributing!
 
 -->
 
+#### Checklist
+
+- [ ] Commit Messages follow the [Conventional Commits](https://conventionalcommits.org/) pattern
+  - A feature commit message is prefixed "feat:"
+  - A bugfix commit message is prefixed "fix:"
+- [ ] Tests for the changes have been added
+- [ ] CI has been passed. (GitHub actions all turns green)
+- [ ] CLA has been signed
+
 #### References to other Issues or PRs
 
 <!-- If this pull request fixes an issue, write "Fixes #NNNN" in that exact
@@ -22,3 +31,14 @@ open. -->
 #### Brief description of what is fixed or changed
 
 #### Other comments
+
+<!--
+    Don't forget about CHANGELOG!
+
+    Changelog entry format:
+    - [#<PR-id>](<PR-URL>) Wechaty OpenAPI <Component> ...
+
+    <PR-id> Id of your pull request.
+    <PR-URL> URL of your PR such as https://github.com/wechaty/openapi/pull/<PR-id>
+    <Component> Component affected by your changes such as scripts, src, tests, etc.
+-->
