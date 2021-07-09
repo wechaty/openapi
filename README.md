@@ -1,41 +1,90 @@
-# Wechaty Puppet OpenAPI Specification (OAS)
+<div align="center">
+<img src="assets/images/wechaty-openapi-logo.svg" width="400" />
+<br />
+<h1>Wechaty Puppet OpenAPI Specification (OAS)</h1>
+<p>
+Wechaty REST API Server with OpenAPI Specification (Swagger)
+</p>
+<a href="https://github.com/wechaty/openapi/issues
+"><img src="https://img.shields.io/github/issues/wechaty/openapi?style=for-the-badge" /></a>
+<a href="https://github.com/wechaty/openapi/network/members"><img src="https://img.shields.io/github/forks/wechaty/openapi?style=for-the-badge" /></a>
+<a href="https://github.com/wechaty/openapi/stargazers"><img src="https://img.shields.io/github/stars/wechaty/openapi?style=for-the-badge" /></a>
+<a href="https://github.com/wechaty/openapi/blob/master/LICENSE"><img src="https://img.shields.io/github/license/wechaty/openapi?style=for-the-badge" /></a>
+</div>
 
-![Wechaty OpenAPI Specification with gRPC](docs/images/wechaty-openapi.png)
+<div align="center">
 
-> Image credit: [Introducing gRPC HTTP API](http://james.newtonking.com/archive/2020/03/31/introducing-grpc-http-api)
+</div>
 
-## UNDER CONSTRUCTION
+<details open="open">
+<summary>Table of Contents</summary>
+<ol>
+<li><a href="#About">About</a></li>
+<li><a href="#Motivation">Motivation</a></li>
+<li><a href="#Screenshots">Screenshots</a></li>
+<li><a href="#Features">Features</a></li>
+<li><a href="#Install">Install</a></li>
+<li>
+<a href="#Usage">Usage</a></li>
+<ul>
+<li><a href="#1-Standalone-Server">Standalone Server</a></li>
+<li><a href="#2-Express-Router">Express Router</a></li>
+</li>
+</ul>
+<li><a href="#Architecture">Architecture</a></li>
+<li><a href="#Resources">Resources</a></li>
+<li><a href="#Contributing">Contributing</a></li>
+<li><a href="#Author">Author</a></li>
+<li><a href="#Copyright--License">Copyright & License</a></li>
+</ol>
 
-This repo is working in process.
-We hope we can finish an alpha version in April,
-and be ready to Beta on May!
+## About
 
-Issues & PRs are welcome, thank you very much for your attention.
+**OpenAPI Specification** (formerly Swagger Specification) is an API description format for REST APIs. An OpenAPI file allows you to describe your entire API, including:
 
-## MOTIVATION
+- Available endpoints (`/users`) and operations on each endpoint (`GET /users`, `POST /users`)
+- Operation parameters Input and output for each operation
+- Authentication methods
+- Contact information, license, terms of use, and other information.
 
-We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
+API specifications can be written in YAML or JSON. The format is easy to learn and readable to both humans and machines. The complete OpenAPI Specification can be found on GitHub: [OpenAPI 3.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md)
 
-## SCREENSHOT
+**NOTE:**
 
-![Wechaty Puppet OpenAPI RESTful API Swagger UI](docs/images/wechaty-openapi-swagger-ui.png)
+> This repo is working in the process.
+> We hope we can finish an alpha version in April,
+> and be ready to Beta in May!
+
+> Issues & PRs are welcome, thank you very much for your attention.
+
+## Motivation
+
+We have [gRPC](https://github.com/wechaty/openapi) for [Wechaty Puppet](https://github.com/wechaty/wechaty-puppet), and we want a RESTful API as well, so we built [OpenAPI Specification](https://www.openapis.org/) (OAS, former [Swagger](https://swagger.io/)) on top of gRPC, with the power of [gRPC OAS Gateway](https://github.com/grpc-ecosystem/grpc-gateway).
+
+## Screenshots
+
+<div align="center">
+<img src="assets/images/swagger.jpg" />
+</div>
+
+<br />
 
 > [View Wechaty OpenAPI Specification on SwaggerHub](https://app.swaggerhub.com/apis/zixia/WechatyPuppet/)
 
-## FEATURES
+## Features
 
 1. A **Standalone HTTP Server** `wechaty-openapi-server`
-2. An **Express Router** for easily mounting to any existing **Experss HTTP Server**.
+2. An **Express Router** for easy mounting to any existing **Express HTTP Server**.
 
-## INSTALL
+## Install
 
 ```sh
 npm install wechaty-openapi
 ```
 
-## USAGE
+## Usage
 
-### 1. Standalone Server
+#### 1. Standalone Server
 
 ```sh
 export WECHATY_PUPPET_SERVICE_TOKEN=__YOUR_TOKEN__
@@ -46,58 +95,43 @@ wechaty-openapi-server \
 
 Then visit <http://localhost:8080/api>
 
-### 2. Express Router
+#### 2. Express Router
 
-tbw
+> TBW
 
-## KNOWN ISSUES
+## Architecture
 
-- [Upload file via auto-generated OpenAPI specification with gRPC backend #1](https://github.com/wechaty/openapi/issues/1)
+Thanks to the ecosystem of gRPC, we can generate OpenAPI Specification from our gRPC proto definitions automatically.
 
-## ARCHITECTURE
+We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve an HTTP RESTful API to gRPC proxy.
 
-[![gRPC Gateway](docs/images/grpc-gateway-architecture.svg)](https://grpc-ecosystem.github.io/grpc-gateway/)
+<div align="center"><a link="https://github.com/wechaty/openapi"><img src="https://raw.githubusercontent.com/wechaty/openapi/master/docs/images/grpc-gateway-architecture.svg" width="400" /><a></div>
 
-> Image credit: [grpc-gateway](https://grpc-ecosystem.github.io/grpc-gateway/)
+> Image credit: [gRPC Gateway](https://grpc-ecosystem.github.io/grpc-gateway/)
 
-Thanks for the ecosystem of gRPC, we can generate OpenAPI Specification from our gRPC proto definitions automatica
-lly.
+Learn more about the RESTful API service for Wechaty from [Wechaty OpenAPI](https://github.com/wechaty/openapi).
 
-We are using [gRPC to JSON proxy generator following the gRPC HTTP spec](https://github.com/grpc-ecosystem/grpc-gateway) as the OpenAPI Specification generator ([protoc-gen-openapiv2](https://github.com/grpc-ecosystem/grpc-gateway/tree/master/protoc-gen-openapiv2)), and using [Like grpc-gateway, but written in node and dynamic](https://github.com/konsumer/grpc-dynamic-gateway) project to serve a HTTP RESTful API to gRPC proxy.
+See also: [AIP-4222 - Routing headers](https://google.aip.dev/client-libraries/4222)
 
-## RESOURCES
+## Resources
 
-- [OpenAPI Specification v3.1](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.1.0.md)
-- [gRPC with REST and Open APIs](https://grpc.io/blog/coreos/)
+Read blogs with the `openapi` tag at https://wechaty.js.org/tags.html#openapi.
 
-### gRPC Transcoding
+Check out [RESOURCES.md](RESOURCES.md) file for learning resources.
 
-- [Google Cloud: Transcoding HTTP/JSON to gRPC](https://cloud.google.com/endpoints/docs/grpc/transcoding)
-- [Envoy: gRPC-JSON transcoder](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/grpc_json_transcoder_filter)
+## Contributing
 
-### RESTful API Naming Convention
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-- [REST Resource Naming Guide](https://restfulapi.net/resource-naming/)
-- [10+ Best Practices for Naming API Endpoints](https://nordicapis.com/10-best-practices-for-naming-api-endpoints/)
-- [PUT vs. POST in REST](https://stackoverflow.com/a/2590281/1123955)
-- [Google Cloud Common Design Patterns](https://cloud.google.com/apis/design/design_patterns)
-- [REST based Services/Architecture vs. RESTFUL Services/Architecture](https://stackoverflow.com/a/24584128/1123955)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Tutorials
+See [CONTRIBUTING.md](http://github.com/wechaty/openapi/blob/master/CONTRIBUTING.md) for more details.
 
-- Talk video: [Writing REST Services for the gRPC curious, Johan Brandhorst, 2019, GopherCon UK](https://youtu.be/Pq1paKC-fXk)
-- [Take a REST with HTTP/2, Protobufs, and Swagger](https://coreos.com/blog/grpc-protobufs-swagger.html)
-- [All the boilerplate you need to get started with writing grpc-gateway powered REST services in Go](https://github.com/johanbrandhorst/grpc-gateway-boilerplate)
-
-## HISTORY
-
-### master
-
-### v0.0.1 (Feb 22, 2021)
-
-Init version for starting developing
-
-## AUTHOR
+## Author
 
 [Huan LI](https://github.com/huan)
 ([李卓桓](http://linkedin.com/in/zixia)),
@@ -106,8 +140,8 @@ Init version for starting developing
 
 [![Profile of Huan LI (李卓桓) on StackOverflow](https://stackexchange.com/users/flair/265499.png)](https://stackexchange.com/users/265499)
 
-## COPYRIGHT & LICENSE
+## Copyright & License
 
-- Code & Docs © 2021-now Huan LI \<zixia@zixia.net\>
-- Code released under the Apache-2.0 License
+- Code & Docs © 2018-now Huan LI \<zixia@zixia.net\>
+- Wechaty gRPC is licensed under the BSD Apache License. See [LICENSE](https://github.com/wechaty/openapi/blob/master/LICENSE) for more details.
 - Docs released under Creative Commons
