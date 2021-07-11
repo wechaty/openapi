@@ -13,6 +13,8 @@ We have [gRPC](https://github.com/wechaty/grpc) for [Wechaty Puppet](https://git
 - Review [pull requests](https://github.com/wechaty/openapi/pulls)
 - Start [hacking on Wechaty](https://github.com/wechaty/openapi/blob/master/CONTRIBUTING.md)
 
+**Note:** You can also refer to this for [General Wechaty blog post guidelines](https://github.com/wechaty/wechaty.js.org).
+
 ### Why contribute
 
 As an open-source product, Wechaty thrives on the contributions of community members. Whatever your skillset is, there is a lot you can do to help us make Wechaty better!
