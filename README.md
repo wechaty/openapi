@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/images/wechaty-openapi-logo.svg" width="400" />
+<img src="docs/images/wechaty-openapi-logo.svg" width="400" />
 <br />
 <h1>Wechaty Puppet OpenAPI Specification (OAS)</h1>
 <p>
@@ -64,7 +64,7 @@ We have [OpenAPI](https://github.com/wechaty/openapi) for [Wechaty Puppet](https
 ## Screenshots
 
 <div align="center">
-<img src="assets/images/swagger.jpg" />
+<img src="docs/images/swagger.jpg" />
 </div>
 
 <br />
