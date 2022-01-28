@@ -1,0 +1,2969 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Wechaty is a Conversational RPA SDK for chatbot makers. With only 6 lines of code, you can create a bot on the most popular IMs like WeChat, Whatsapp, WeCom, Gitter, etc.\n\nWechaty Puppet Service is the RESTful API for Wechaty API, which is build on top of the Wechaty Puppet Abstraction and the gRPC proto definition.",
+    "version": "0.20.16",
+    "title": "Wechaty Puppet Service OpenAPI Specification",
+    "contact": {
+      "name": "Wechaty",
+      "url": "https://github.com/wechaty/openapi",
+      "email": "wechaty@chatie.io"
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "Puppet"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/contacts": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*\nHuan(202002): consider changing response to a stream in the future for better performance",
+        "operationId": "Puppet_ContactList",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/-/tags/{id}": {
+      "delete": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*\nOperate Sub-Collections\n  https://cloud.google.com/apis/design/design_patterns#list_sub-collections",
+        "operationId": "Puppet_TagContactDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetTagContactDeleteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/self/name/{name}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactSelfName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactSelfNameResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/self/qrcode": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Contact Self",
+        "operationId": "Puppet_ContactSelfQRCode",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactSelfQRCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/self/signature": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactSelfSignature",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetContactSelfSignatureRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactSelfSignatureResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}/corporation-remark": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactCorporationRemark",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetContactCorporationRemarkRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactCorporationRemarkResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}/description": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactDescription",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetContactDescriptionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactDescriptionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}/phone": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactPhone",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetContactPhoneRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactPhoneResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}/tags": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_TagContactList",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetTagContactListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}/tags/{id}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Tag",
+        "operationId": "Puppet_TagContactAdd",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetTagContactAddResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_TagContactRemove",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetTagContactRemoveResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Contact",
+        "operationId": "Puppet_ContactPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{id}/alias": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactAlias",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetContactAliasRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactAliasResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{id}/avatar": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_ContactAvatar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "filebox",
+            "in": "query",
+            "description": "*\nHuan(202011) TODO:\n 1. rename to file_box\n 2. replace it by FileBoxChunk with stream support.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetContactAvatarResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{id}/dirty/{type}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_DirtyPayload2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PAYLOAD_TYPE_UNKNOWN",
+              "PAYLOAD_TYPE_MESSAGE",
+              "PAYLOAD_TYPE_CONTACT",
+              "PAYLOAD_TYPE_ROOM",
+              "PAYLOAD_TYPE_ROOM_MEMBER",
+              "PAYLOAD_TYPE_FRIENDSHIP"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDirtyPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/conversations/-/filebox": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageSendFileStream",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " (streaming inputs)",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendFileStreamRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendFileStreamResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/conversations/{conversationId}/contact": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageSendContact",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendContactRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/conversations/{conversationId}/mini-program": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageSendMiniProgram",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendMiniProgramRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendMiniProgramResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/conversations/{conversationId}/text": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageSendText",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendTextRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendTextResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/conversations/{conversationId}/url-link": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageSendUrl",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendUrlRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendUrlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/ding": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_Ding",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetDingRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Event - Server Stream",
+        "operationId": "Puppet_Event",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/Stream result of puppetEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendship/accept/{id}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_FriendshipAccept",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipAcceptResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendship/add/{contactId}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_FriendshipAdd",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipAddRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipAddResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendship/search/phone/{phone}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_FriendshipSearchPhone",
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipSearchPhoneResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendship/search/weixin/{weixin}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_FriendshipSearchWeixin",
+        "parameters": [
+          {
+            "name": "weixin",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipSearchWeixinResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendship/{id}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Friendship",
+        "operationId": "Puppet_FriendshipPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetFriendshipPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/friendships/{id}/dirty/{type}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_DirtyPayload5",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PAYLOAD_TYPE_UNKNOWN",
+              "PAYLOAD_TYPE_MESSAGE",
+              "PAYLOAD_TYPE_CONTACT",
+              "PAYLOAD_TYPE_ROOM",
+              "PAYLOAD_TYPE_ROOM_MEMBER",
+              "PAYLOAD_TYPE_FRIENDSHIP"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDirtyPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_Logout",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetLogoutResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessagePayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessagePayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/contact": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageContact",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageContactResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/dirty/{type}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_DirtyPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PAYLOAD_TYPE_UNKNOWN",
+              "PAYLOAD_TYPE_MESSAGE",
+              "PAYLOAD_TYPE_CONTACT",
+              "PAYLOAD_TYPE_ROOM",
+              "PAYLOAD_TYPE_ROOM_MEMBER",
+              "PAYLOAD_TYPE_FRIENDSHIP"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDirtyPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/filebox": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageFileStream",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/Stream result of puppetMessageFileStreamResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/image/{type}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageImageStream",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "IMAGE_TYPE_UNSPECIFIED",
+              "IMAGE_TYPE_THUMBNAIL",
+              "IMAGE_TYPE_HD",
+              "IMAGE_TYPE_ARTWORK"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/Stream result of puppetMessageImageStreamResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/mini-program": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageMiniProgram",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageMiniProgramResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/recall": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageRecall",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageRecallRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageRecallResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/message/{id}/url-link": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_MessageUrl",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageUrlResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/room-invitations/{id}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Room Invitation",
+        "operationId": "Puppet_RoomInvitationPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "query",
+            "description": "*\nHuan(202002): `payload` should be removed.\n The puppet server should take the responsibilities\n for storing the unaccepted friend-request payload.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomInvitationPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/room-invitations/{id}/accept": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomInvitationAccept",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomInvitationAcceptResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomList",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomCreate",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetRoomCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomCreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Room",
+        "operationId": "Puppet_RoomPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomQuit",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomQuitResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/add/{contactId}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomAdd",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomAddResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/announcement": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomAnnounce",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomAnnounceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomAnnounce2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetRoomAnnounceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomAnnounceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/avatar": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomAvatar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomAvatarResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/dirty/members/{type}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_DirtyPayload4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PAYLOAD_TYPE_UNKNOWN",
+              "PAYLOAD_TYPE_MESSAGE",
+              "PAYLOAD_TYPE_CONTACT",
+              "PAYLOAD_TYPE_ROOM",
+              "PAYLOAD_TYPE_ROOM_MEMBER",
+              "PAYLOAD_TYPE_FRIENDSHIP"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDirtyPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/dirty/{type}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_DirtyPayload3",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "PAYLOAD_TYPE_UNKNOWN",
+              "PAYLOAD_TYPE_MESSAGE",
+              "PAYLOAD_TYPE_CONTACT",
+              "PAYLOAD_TYPE_ROOM",
+              "PAYLOAD_TYPE_ROOM_MEMBER",
+              "PAYLOAD_TYPE_FRIENDSHIP"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetDirtyPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/member/{contactId}": {
+      "delete": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomDel",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomDelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/members": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomMemberList",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomMemberListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/members/{memberId}": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Room Member",
+        "operationId": "Puppet_RoomMemberPayload",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "memberId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomMemberPayloadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/qrcode": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomQRCode",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomQRCodeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/rooms/{id}/topic/{topic}": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_RoomTopic",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "topic",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetRoomTopicResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/start": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*",
+        "description": "Base",
+        "operationId": "Puppet_Start",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetStartResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/stop": {
+      "put": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_Stop",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetStopResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "Puppet"
+        ],
+        "operationId": "Puppet_Version",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetVersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/wechaty.Puppet/MessageFile": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*\n@deprecated: using MessageFileStream to transfer files\nHuan(202010): will be removed (replaced by MessageFileStream) after Dec 31, 2021",
+        "operationId": "Puppet_MessageFile",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageFileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/wechaty.Puppet/MessageImage": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*\n@deprecated: using MessageImageStream to transfer images\nHuan(202010): will be removed (replaced by MessageImageStream) after Dec 31, 2021",
+        "operationId": "Puppet_MessageImage",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageImageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageImageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    },
+    "/wechaty.Puppet/MessageSendFile": {
+      "post": {
+        "tags": [
+          "Puppet"
+        ],
+        "summary": "*\n@deprecated: using MesageSendFileStream to transfer file message to server\nHuan(202010): will be removed (replaced by MessageSendFileStream) after Dec 31, 2021",
+        "operationId": "Puppet_MessageSendFile",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/puppetMessageSendFileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte",
+          "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
+        }
+      }
+    },
+    "puppetContactAliasRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string",
+          "title": "nullable"
+        }
+      }
+    },
+    "puppetContactAliasResponse": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetContactAvatarResponse": {
+      "type": "object",
+      "properties": {
+        "filebox": {
+          "type": "string",
+          "title": "*\nHuan(202011) TODO:\n 1. rename to file_box\n 2. replace it by FileBoxChunk with stream support"
+        }
+      }
+    },
+    "puppetContactCorporationRemarkRequest": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "corporationRemark": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetContactCorporationRemarkResponse": {
+      "type": "object"
+    },
+    "puppetContactDescriptionRequest": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetContactDescriptionResponse": {
+      "type": "object"
+    },
+    "puppetContactGender": {
+      "type": "string",
+      "enum": [
+        "CONTACT_GENDER_UNSPECIFIED",
+        "CONTACT_GENDER_MALE",
+        "CONTACT_GENDER_FEMALE"
+      ],
+      "default": "CONTACT_GENDER_UNSPECIFIED"
+    },
+    "puppetContactListResponse": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetContactPayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "gender": {
+          "$ref": "#/definitions/puppetContactGender"
+        },
+        "type": {
+          "$ref": "#/definitions/puppetContactType"
+        },
+        "name": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "friend": {
+          "type": "boolean"
+        },
+        "province": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "star": {
+          "type": "boolean"
+        },
+        "weixin": {
+          "type": "string"
+        },
+        "corporation": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "coworker": {
+          "type": "boolean"
+        },
+        "phone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetContactPhoneRequest": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "phoneList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetContactPhoneResponse": {
+      "type": "object",
+      "properties": {
+        "phoneList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetContactSelfNameResponse": {
+      "type": "object"
+    },
+    "puppetContactSelfQRCodeResponse": {
+      "type": "object",
+      "properties": {
+        "qrcode": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetContactSelfSignatureRequest": {
+      "type": "object",
+      "properties": {
+        "signature": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetContactSelfSignatureResponse": {
+      "type": "object"
+    },
+    "puppetContactType": {
+      "type": "string",
+      "enum": [
+        "CONTACT_TYPE_UNSPECIFIED",
+        "CONTACT_TYPE_PERSONAL",
+        "CONTACT_TYPE_OFFICIAL",
+        "CONTACT_TYPE_CORPORATION"
+      ],
+      "default": "CONTACT_TYPE_UNSPECIFIED"
+    },
+    "puppetDingRequest": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetDingResponse": {
+      "type": "object"
+    },
+    "puppetDirtyPayloadResponse": {
+      "type": "object"
+    },
+    "puppetEventResponse": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/puppetEventType"
+        },
+        "payload": {
+          "type": "string",
+          "title": "TODO: Huan(202002) consider to use a PB Map?"
+        }
+      }
+    },
+    "puppetEventType": {
+      "type": "string",
+      "enum": [
+        "EVENT_TYPE_UNSPECIFIED",
+        "EVENT_TYPE_HEARTBEAT",
+        "EVENT_TYPE_MESSAGE",
+        "EVENT_TYPE_DONG",
+        "EVENT_TYPE_ERROR",
+        "EVENT_TYPE_FRIENDSHIP",
+        "EVENT_TYPE_ROOM_INVITE",
+        "EVENT_TYPE_ROOM_JOIN",
+        "EVENT_TYPE_ROOM_LEAVE",
+        "EVENT_TYPE_ROOM_TOPIC",
+        "EVENT_TYPE_SCAN",
+        "EVENT_TYPE_READY",
+        "EVENT_TYPE_RESET",
+        "EVENT_TYPE_LOGIN",
+        "EVENT_TYPE_LOGOUT",
+        "EVENT_TYPE_DIRTY"
+      ],
+      "default": "EVENT_TYPE_UNSPECIFIED"
+    },
+    "puppetFileBoxChunk": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "format": "byte",
+          "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetFriendshipAcceptResponse": {
+      "type": "object"
+    },
+    "puppetFriendshipAddRequest": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "hello": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetFriendshipAddResponse": {
+      "type": "object"
+    },
+    "puppetFriendshipPayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "contactId": {
+          "type": "string"
+        },
+        "hello": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/puppetFriendshipType"
+        },
+        "stranger": {
+          "type": "string"
+        },
+        "ticket": {
+          "type": "string"
+        },
+        "scene": {
+          "$ref": "#/definitions/puppetFriendshipSceneType"
+        }
+      }
+    },
+    "puppetFriendshipSceneType": {
+      "type": "string",
+      "enum": [
+        "FRIENDSHIP_SCENE_TYPE_UNSPECIFIED",
+        "FRIENDSHIP_SCENE_TYPE_QQ",
+        "FRIENDSHIP_SCENE_TYPE_EMAIL",
+        "FRIENDSHIP_SCENE_TYPE_WEIXIN",
+        "FRIENDSHIP_SCENE_TYPE_QQTBD",
+        "FRIENDSHIP_SCENE_TYPE_ROOM",
+        "FRIENDSHIP_SCENE_TYPE_PHONE",
+        "FRIENDSHIP_SCENE_TYPE_CARD",
+        "FRIENDSHIP_SCENE_TYPE_LOCATION",
+        "FRIENDSHIP_SCENE_TYPE_BOTTLE",
+        "FRIENDSHIP_SCENE_TYPE_SHAKING",
+        "FRIENDSHIP_SCENE_TYPE_QRCODE"
+      ],
+      "default": "FRIENDSHIP_SCENE_TYPE_UNSPECIFIED"
+    },
+    "puppetFriendshipSearchPhoneResponse": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string",
+          "title": "nullable"
+        }
+      }
+    },
+    "puppetFriendshipSearchWeixinResponse": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string",
+          "title": "nullable"
+        }
+      }
+    },
+    "puppetFriendshipType": {
+      "type": "string",
+      "enum": [
+        "FRIENDSHIP_TYPE_UNSPECIFIED",
+        "FRIENDSHIP_TYPE_CONFIRM",
+        "FRIENDSHIP_TYPE_RECEIVE",
+        "FRIENDSHIP_TYPE_VERIFY"
+      ],
+      "default": "FRIENDSHIP_TYPE_UNSPECIFIED"
+    },
+    "puppetImageType": {
+      "type": "string",
+      "enum": [
+        "IMAGE_TYPE_UNSPECIFIED",
+        "IMAGE_TYPE_THUMBNAIL",
+        "IMAGE_TYPE_HD",
+        "IMAGE_TYPE_ARTWORK"
+      ],
+      "default": "IMAGE_TYPE_UNSPECIFIED"
+    },
+    "puppetLogoutResponse": {
+      "type": "object"
+    },
+    "puppetMessageContactResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageFileRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageFileResponse": {
+      "type": "object",
+      "properties": {
+        "filebox": {
+          "type": "string",
+          "title": "*\nHuan(202011) deprecated: use MessageFileStreamResponse instead"
+        }
+      }
+    },
+    "puppetMessageFileStreamResponse": {
+      "type": "object",
+      "properties": {
+        "fileBoxChunk": {
+          "$ref": "#/definitions/puppetFileBoxChunk"
+        }
+      }
+    },
+    "puppetMessageImageRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/puppetImageType"
+        }
+      }
+    },
+    "puppetMessageImageResponse": {
+      "type": "object",
+      "properties": {
+        "filebox": {
+          "type": "string",
+          "title": "*\nHuan(202011) TODO:\n 1. rename to file_box\n 2. replace it by FileBoxChunk with stream support"
+        }
+      }
+    },
+    "puppetMessageImageStreamResponse": {
+      "type": "object",
+      "properties": {
+        "fileBoxChunk": {
+          "$ref": "#/definitions/puppetFileBoxChunk"
+        }
+      }
+    },
+    "puppetMessageMiniProgramResponse": {
+      "type": "object",
+      "properties": {
+        "miniProgram": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessagePayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "type": {
+          "$ref": "#/definitions/puppetMessageType"
+        },
+        "fromId": {
+          "type": "string"
+        },
+        "roomId": {
+          "type": "string"
+        },
+        "toId": {
+          "type": "string"
+        },
+        "mentionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetMessageRecallRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageRecallResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "puppetMessageSendContactRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "contactId": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendContactResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "nullable"
+        }
+      }
+    },
+    "puppetMessageSendFileRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "filebox": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendFileResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendFileStreamRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "fileBoxChunk": {
+          "$ref": "#/definitions/puppetFileBoxChunk"
+        }
+      }
+    },
+    "puppetMessageSendFileStreamResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendMiniProgramRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "miniProgram": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendMiniProgramResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendTextRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "mentonalIds": {
+          "type": "array",
+          "title": "Huan(202011) FIXME: Issue #99\nhttps://github.com/wechaty/grpc/issues/99",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetMessageSendTextResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendUrlRequest": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "urlLink": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageSendUrlResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetMessageType": {
+      "type": "string",
+      "enum": [
+        "MESSAGE_TYPE_UNSPECIFIED",
+        "MESSAGE_TYPE_ATTACHMENT",
+        "MESSAGE_TYPE_AUDIO",
+        "MESSAGE_TYPE_CONTACT",
+        "MESSAGE_TYPE_EMOTICON",
+        "MESSAGE_TYPE_IMAGE",
+        "MESSAGE_TYPE_TEXT",
+        "MESSAGE_TYPE_VIDEO",
+        "MESSAGE_TYPE_CHAT_HISTORY",
+        "MESSAGE_TYPE_LOCATION",
+        "MESSAGE_TYPE_MINI_PROGRAM",
+        "MESSAGE_TYPE_TRANSFER",
+        "MESSAGE_TYPE_RED_ENVELOPE",
+        "MESSAGE_TYPE_RECALLED",
+        "MESSAGE_TYPE_URL"
+      ],
+      "default": "MESSAGE_TYPE_UNSPECIFIED"
+    },
+    "puppetMessageUrlResponse": {
+      "type": "object",
+      "properties": {
+        "urlLink": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetPayloadType": {
+      "type": "string",
+      "enum": [
+        "PAYLOAD_TYPE_UNKNOWN",
+        "PAYLOAD_TYPE_MESSAGE",
+        "PAYLOAD_TYPE_CONTACT",
+        "PAYLOAD_TYPE_ROOM",
+        "PAYLOAD_TYPE_ROOM_MEMBER",
+        "PAYLOAD_TYPE_FRIENDSHIP"
+      ],
+      "default": "PAYLOAD_TYPE_UNKNOWN"
+    },
+    "puppetRoomAddResponse": {
+      "type": "object"
+    },
+    "puppetRoomAnnounceRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomAnnounceResponse": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomAvatarResponse": {
+      "type": "object",
+      "properties": {
+        "filebox": {
+          "type": "string",
+          "title": "*\nHuan(202011) TODO:\n 1. rename to file_box\n 2. replace it by FileBoxChunk with stream support"
+        }
+      }
+    },
+    "puppetRoomCreateRequest": {
+      "type": "object",
+      "properties": {
+        "contactIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "topic": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomCreateResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomDelResponse": {
+      "type": "object"
+    },
+    "puppetRoomInvitationAcceptResponse": {
+      "type": "object"
+    },
+    "puppetRoomInvitationPayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "inviterId": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "memberCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "memberIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "invitation": {
+          "type": "string"
+        },
+        "receiverId": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomListResponse": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetRoomMemberListResponse": {
+      "type": "object",
+      "properties": {
+        "memberIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetRoomMemberPayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "roomAlias": {
+          "type": "string"
+        },
+        "inviterId": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomPayloadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "adminIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "memberIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetRoomQRCodeResponse": {
+      "type": "object",
+      "properties": {
+        "qrcode": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetRoomQuitResponse": {
+      "type": "object"
+    },
+    "puppetRoomTopicResponse": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string"
+        }
+      }
+    },
+    "puppetStartResponse": {
+      "type": "object"
+    },
+    "puppetStopResponse": {
+      "type": "object"
+    },
+    "puppetTagContactAddResponse": {
+      "type": "object"
+    },
+    "puppetTagContactDeleteResponse": {
+      "type": "object"
+    },
+    "puppetTagContactListResponse": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "puppetTagContactRemoveResponse": {
+      "type": "object"
+    },
+    "puppetVersionResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "Stream result of puppetEventResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/puppetEventResponse"
+        },
+        "error": {
+          "$ref": "#/definitions/rpcStatus"
+        }
+      }
+    },
+    "Stream result of puppetMessageFileStreamResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/puppetMessageFileStreamResponse"
+        },
+        "error": {
+          "$ref": "#/definitions/rpcStatus"
+        }
+      }
+    },
+    "Stream result of puppetMessageImageStreamResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/puppetMessageImageStreamResponse"
+        },
+        "error": {
+          "$ref": "#/definitions/rpcStatus"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Wechaty OpenAPI repository",
+    "url": "https://github.com/wechaty/openapi"
+  }
+}
